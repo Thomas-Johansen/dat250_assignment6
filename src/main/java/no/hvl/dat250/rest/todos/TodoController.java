@@ -9,6 +9,7 @@ import java.util.Objects;
 /**
  * Rest-Endpoint for todos.
  */
+@CrossOrigin(origins = {"http://localhost:4200/"})
 @RestController
 public class TodoController {
 
@@ -40,6 +41,9 @@ public class TodoController {
   public List<Todo> getTodos() {
     return todos;
   }
+
+  @GetMapping("/todos:")
+  public List<Todo> getTodos2() {return todos;}
 
   @GetMapping("/todos/{id}")
   public Todo getTodos(@PathVariable Long id){
